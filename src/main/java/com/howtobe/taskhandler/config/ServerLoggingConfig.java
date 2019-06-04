@@ -1,4 +1,4 @@
-package com.howtobe.taskhandler.configuration;
+package com.howtobe.taskhandler.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
