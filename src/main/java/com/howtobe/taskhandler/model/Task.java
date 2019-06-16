@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public abstract class Task {
 
+    protected Long id;
     protected String description;
     protected TaskType taskType;
-
 }
