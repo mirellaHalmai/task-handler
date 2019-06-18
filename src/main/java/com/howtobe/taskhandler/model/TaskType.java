@@ -5,5 +5,6 @@ public enum TaskType {
     BUDGET,
     WORK,
     FUN,
-    ADMINISTRATION
+    ADMINISTRATION,
+    OTHER
 }
