@@ -25,6 +25,7 @@ public class Task {
     private LocalDateTime to;
     private ChronoUnit recurrence;
     private ChronoUnit alert;
+    private boolean done;
 
     public void addTaskType(TaskType taskType) {
         taskTypeList.add(taskType);
