@@ -7,7 +7,7 @@ public enum BudgetEntryType {
     INCOME (1),
     EXPENDITURE (0);
 
-    private int code;
+    private Integer code;
 
     BudgetEntryType(int code) {
         this.code = code;
