@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Currency;
 
 @Data
@@ -21,11 +22,13 @@ public class BudgetEntry {
 
     @Id
     @GeneratedValue
-    Long id;
-    String description;
-    Currency currency;
-    BigDecimal amount;
-    BudgetEntryType type;
-    BudgetEntryStatus status;
-    LocalDate due;
+    private Long id;
+    private String description;
+    private Currency currency;
+    private BigDecimal amount;
+    private BudgetEntryType type;
+    private BudgetEntryStatus status;
+    private LocalDate due;
+    private boolean periodic;
+    private ChronoUnit period;
 }
