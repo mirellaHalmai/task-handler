@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Currency;
@@ -13,8 +16,11 @@ import java.util.Currency;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
 public class BudgetEntry {
 
+    @Id
+    @GeneratedValue
     Long id;
     String description;
     Currency currency;
