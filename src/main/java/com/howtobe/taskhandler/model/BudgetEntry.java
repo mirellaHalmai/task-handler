@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -31,4 +32,6 @@ public class BudgetEntry {
     private LocalDate due;
     private boolean periodic;
     private ChronoUnit period;
+    @OneToOne(mappedBy = "budgetEntry")
+    private Task task;
 }

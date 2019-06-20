@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -24,16 +22,23 @@ public class Task {
     @GeneratedValue
     private Long id;
     private String description;
-    private List<TaskType> taskTypeList = new ArrayList<>();
+
+    @ElementCollection
+    private List<TaskType> taskTypeList;
     private String location;
+
+    @OneToOne(cascade = CascadeType.ALL)
     private BudgetEntry budgetEntry;
-    private LocalDateTime from;
-    private LocalDateTime to;
+    private LocalDateTime taskStart;
+    private LocalDateTime taskEnd;
     private ChronoUnit recurrence;
     private ChronoUnit alert;
     private boolean done;
 
     public void addTaskType(TaskType taskType) {
+        if (taskTypeList == null) {
+            taskTypeList = new ArrayList<>();
+        }
         taskTypeList.add(taskType);
     }
 }
